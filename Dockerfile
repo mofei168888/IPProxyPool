@@ -50,7 +50,7 @@ RUN pip install pymysql
 
 WORKDIR /app
 #安装Python程序运行的依赖库
-COPY base.txt /app
+COPY requirements.txt /app
 RUN pip install -r  requirements.txt
 
 
