@@ -16,7 +16,9 @@ RUN apt-get -y install python2.7 \
      && apt-get -y install wget
 
 
-RUN cd /app && git clone https://github.com/mofei168888/IPProxyPool.git
+RUN cd /app &&
+
+COPY ./  /app
 
 RUN cd /app \
     && wget https://github.com/libevent/libevent/releases/download/release-2.1.8-stable/libevent-2.1.8-stable.tar.gz \
@@ -46,13 +48,13 @@ RUN pip install web.py
 RUN pip install pymysql
 
 
-WORKDIR /app/IPProxyPool
+WORKDIR /app
 #安装Python程序运行的依赖库
-COPY base.txt /app/IPProxyPool
+COPY base.txt /app
 RUN pip install -r  requirements.txt
 
 
 EXPOSE 8010
 #CMD echo 'hello world'
 
-ENTRYPOINT ["python", "/app/IPProxyPool/IPProxy.py"]
+ENTRYPOINT ["python", "/app/IPProxy.py"]
