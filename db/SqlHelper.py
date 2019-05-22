@@ -7,6 +7,9 @@ from config import DB_CONFIG, DEFAULT_SCORE
 
 from db.ISqlHelper import ISqlHelper
 
+import logging
+logger = logging.getLogger('sqlHelper')
+
 '''
 sql操作的基类
 包括ip，端口，types类型(0高匿名，1透明)，protocol(0 http,1 https http),country(国家),area(省市),updatetime(更新时间)
@@ -44,6 +47,7 @@ class SqlHelper(ISqlHelper):
         self.session = DB_Session()
 
     def init_db(self):
+        logger.info(DB_CONFIG['DB_CONNECT_STRING'])
         BaseModel.metadata.create_all(self.engine)
 
     def drop_db(self):

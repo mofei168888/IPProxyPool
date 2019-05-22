@@ -2,7 +2,9 @@
 import sys
 from config import DB_CONFIG
 from util.exception import Con_DB_Fail
+import logging
 
+logger = logging.getLogger('datastore')
 
 try:
     if DB_CONFIG['DB_CONNECT_TYPE'] == 'pymongo':
@@ -14,7 +16,8 @@ try:
     sqlhelper = SqlHelper()
     sqlhelper.init_db()
 except Exception as e:
-    raise Con_DB_Fail
+    logger.error("Database conn Error:%s"%e)
+    #raise Con_DB_Fail
 
 
 def store_data(queue2, db_proxy_num):

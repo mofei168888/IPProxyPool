@@ -102,7 +102,7 @@ parserList = [
 DB_CONFIG = {
 
     'DB_CONNECT_TYPE': 'sqlalchemy',  # 'pymongo'sqlalchemy;redis
-    'DB_CONNECT_STRING':'mysql+pymysql://cq:uxsot123@localhost:3306/proxy?charset=utf8'
+    'DB_CONNECT_STRING':'mysql+pymysql://cq:uxsoft123@localhost:3306/proxys?charset=utf8'
 
     #'DB_CONNECT_TYPE': 'pymongo',  # 'pymongo
     #'DB_CONNECT_STRING':'mongodb://localhost:27017/',
