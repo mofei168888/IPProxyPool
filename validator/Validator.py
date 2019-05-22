@@ -5,6 +5,7 @@ import chardet
 from gevent import monkey
 monkey.patch_all()
 
+
 import json
 import os
 import gevent
@@ -217,8 +218,12 @@ if __name__ == '__main__':
     port = 3128
     proxies = {"http": "http://%s:%s" % (ip, port), "https": "http://%s:%s" % (ip, port)}
     _checkHttpProxy(None,proxies)
-    # getMyIP()
-    # str="{ip:'61.150.43.121',address:'陕西省西安市 西安电子科技大学'}"
-    # j = json.dumps(str)
-    # str = j['ip']
-    # print str
+    '''
+    
+    getMyIP()
+    str="{ip:'61.150.43.121',address:'陕西省西安市 西安电子科技大学'}"
+    j = json.dumps(str)
+    str = j['ip']
+    print(str)
+    
+    '''
