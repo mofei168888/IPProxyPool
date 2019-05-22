@@ -16,8 +16,6 @@ RUN apt-get -y install python2.7 \
      && apt-get -y install wget
 
 
-RUN cd /app
-
 COPY ./  /app
 
 RUN cd /app \
@@ -37,8 +35,9 @@ RUN apt-get install -y python-lxml
 RUN  cd / && find * -name 'chardet*'
 
 #删除老版本的chardet 自动安装新版本
-RUN rm -fr /usr/lib/python2.7/dist-packages/chardet-2.0.1.egg-info \
-     &&rm -fr  /usr/lib/python2.7/dist-packages/chardet
+
+#RUN rm -fr /usr/lib/python2.7/dist-packages/chardet-2.0.1.egg-info \
+#     &&rm -fr  /usr/lib/python2.7/dist-packages/chardet
 
 RUN apt-get install -y python-dev \
     && pip install  greenlet
