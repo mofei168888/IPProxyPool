@@ -16,7 +16,7 @@ RUN apt-get -y install python2.7 \
      && apt-get -y install wget
 
 
-RUN cd /app &&
+RUN cd /app
 
 COPY ./  /app
 
