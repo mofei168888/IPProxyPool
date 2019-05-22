@@ -49,7 +49,7 @@ RUN pip install pymysql
 WORKDIR /app/IPProxyPool
 #安装Python程序运行的依赖库
 COPY base.txt /app/IPProxyPool
-RUN pip install -r  base.txt
+RUN pip install -r  requirements.txt
 
 
 EXPOSE 8010
